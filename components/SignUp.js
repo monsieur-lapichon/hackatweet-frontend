@@ -1,6 +1,23 @@
 import styles from '../styles/Home.module.css';
+import { useState, useEffect } from 'react';
+import { Modal } from 'antd';
 
 function SignUp () {
+
+    //variable d'etat pour les 3 champs de saisies.
+    const [firstname, setFirstname] = useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    //fonction pour gérer la création du compte.
+    const handleSignUp = () => {
+        fetch('http://localhost:3000/signup', {
+            
+        })
+
+    }
+
+
     return (
         <div className={styles.signUpContainer}>
             <button className={styles.closeButton}>X</button>
