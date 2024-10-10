@@ -1,0 +1,67 @@
+.homeContainer {
+   display: flex;
+   justify-content: space-between;
+   height: 100vh;
+   width: 100vw;
+   
+}
+
+.logoContainer {
+    flex: 0.4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../public/background-twitter.jpeg);
+    background-size: cover;
+}
+
+.logo {
+    align-self: center;
+    top: 20px; 
+    left: 20px; 
+    width: 250px;
+    height: 250px;
+  }
+
+.contentContainer {
+    flex: 0.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;
+    background-color: #151F2B;
+    background-size: cover;
+    padding-left: 50px;
+}
+
+.title {
+    font-size: 100px;
+    color: white;
+
+}
+
+.signUpTitle {
+    font-size: 40px;
+    color: white;
+}
+
+.contentContainer .h5 {
+    font-size: 20px;
+    color: white; 
+}
+
+.buttonSignUp {
+padding: 10px 80px;
+border-radius: 20px;
+font-size: 20px;
+background-color: #1099F7;
+color: white;
+}
+
+.buttonSignIn {
+    padding: 10px 80px;
+    border-radius: 20px;
+    font-size: 20px;
+    background-color: transparent;
+    color: #1099F7;
+}
