@@ -22,6 +22,7 @@ function Login() {
               <SignUp />
             <h5 className={styles.h5} >Already have an account? </h5>
               <button className={styles.buttonSignIn}>Sign in</button>
+              <SignIn />
           </div>
         </div>
       </div>
