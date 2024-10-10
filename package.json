@@ -9,15 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< HEAD
+    "@reduxjs/toolkit": "^2.2.8",
     "antd": "^5.21.3",
     "next": "12.1.6",
     "react": "^18.3.1",
-=======
-    "@reduxjs/toolkit": "^2.2.8",
-    "next": "12.1.6",
-    "react": "18.1.0",
->>>>>>> 43e90650c263850abd46a8c4885ac8fbe939ace2
     "react-dom": "18.1.0",
     "react-redux": "^9.1.2"
   },
