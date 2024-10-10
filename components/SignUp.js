@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 
 
-function SignUp() {
+function SignUp({onClose}) {
   //variable d'etat pour les 3 champs de saisies.
   const [firstname, setFirstname] = useState("");
   const [username, setUsername] = useState("");
@@ -39,7 +39,7 @@ function SignUp() {
           <div className={styles.modalHeader}>
             <button
               className={styles.closeButton}
-              onClick={() => closeSignUp()}
+              onClick={(onClose)}
             >
               X
             </button>

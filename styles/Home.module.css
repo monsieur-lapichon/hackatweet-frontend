@@ -1,22 +1,97 @@
-.main {
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.leftContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20%;
+  background-color: #151F2B;
+  color: white;
+  padding: 20px;
+}
+
+.centralContent {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding: 20px;
+  background-color: #151F2B;
+  color: white;
+  border-left: 1px grey solid;
+  border-right: 1px grey solid;
+}
+
+.rightContent {
+  width: 20%;
+  background-color: #151F2B;
+  color: white;
+  padding: 20px;
+}
+
+.userSection {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 4rem 0;
+  align-items: flex-start;
 }
 
-.title {
-  line-height: 1.15;
-  font-size: 4rem;
+.logoutButton {
+  background-color: transparent;
+  color: white;
+  font-size: 15px;
+  border-radius: 30px;
+  padding: 5px 20px;
+
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.tweetBox {
+  display: flex;
+  flex-direction: column;
+  background-color: #151F2B;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px;
 }
 
-.title a:hover, .title a:focus, .title a:active {
-  text-decoration: underline;
+.tweetInput {
+  width: 100%;
+  background: none;
+  border-bottom-right-radius: gray 1px solid;
+  color: white;
+  resize: none;
+  font-size: 16px;
+  padding: 10px;
+}
+
+
+.tweetButton {
+  background-color: #1da1f2;
+  border: none;
+  font-size: 18px;
+  color: white;
+  margin: 10px;
+  padding: 10px 40px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.tweetsList {
+  display: flex;
+  
+  margin-top: 0px;
+  border: grey 1px solid;
+}
+
+.tweet {
+  background-color: #151F2B;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.hashtag {
+  color: #1da1f2;
 }
