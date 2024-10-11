@@ -1,4 +1,6 @@
 import styles from "../styles/SignUp.module.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
@@ -37,12 +39,7 @@ function SignUp({onClose}) {
       <div className={styles.modalWrapper}>
         <div className={styles.modal}>
           <div className={styles.modalHeader}>
-            <button
-              className={styles.closeButton}
-              onClick={(onClose)}
-            >
-              X
-            </button>
+              <FontAwesomeIcon icon={faXmark} onClick={(onClose)} />  
           </div>
           <div className={styles.modalBody}>
             <div className={styles.logoContainer}>

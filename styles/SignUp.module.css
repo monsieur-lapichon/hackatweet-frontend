@@ -27,12 +27,13 @@
     font-size: 20px;
     background-color: #fff;
     color: #000;
+    cursor: pointer;
 }
 
 
 .modalWrapper {
     width: 500px;
-    height: 600px;
+    height: 500px;
 }
 
 .modal {
@@ -63,4 +64,8 @@
     display: flex;
     justify-content: flex-end;
     font-size: 25px;
+    color: #fff;
+}
+.modalHeader * {
+    cursor: pointer;
 }

@@ -1,23 +1,16 @@
-.modalContainer {
-    display: flex;
-    flex-direction: column;
-    background: #151e27;
-    padding: 15px;
-}
-.closeModal {
-    text-align: right;
-    color: #fff;
-}
 .logoContainer {
     text-align: center;
 }
+
 .h3 {
     color: #fff;
 }
+
 .formulaire {
     display: flex;
     flex-direction: column;
 }
+
 .input {
     padding: 10px;
     border-radius: 5px;
@@ -26,6 +19,7 @@
     border: solid 1px #fff;
     margin-bottom: 15px;
 }
+
 .button {
     padding: 10px;
     min-width: 200px;
@@ -33,4 +27,45 @@
     font-size: 20px;
     background-color: #fff;
     color: #000;
+    cursor: pointer;
+}
+
+
+.modalWrapper {
+    width: 500px;
+    height: 500px;
+}
+
+.modal {
+    background: #151e27;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.modalOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalBody {
+    padding-top: 10px;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 25px;
+    color: #fff;
+}
+.modalHeader * {
+    cursor: pointer;
 }

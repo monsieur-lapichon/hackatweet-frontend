@@ -4,10 +4,18 @@ import Image from 'next/image';
 import SignUp from './SignUp';
 import SignIn from './SignIn';
 import { useState } from 'react';
+import { useSelector } from "react-redux";
 
 function Login() {
 
+    const user = useSelector((state) => state.user.value);
+    if(user.isConnected) {
+      window.location.assign("/");
+    }
+
+    // variables d'etat des modales
     const [showSignUp, setShowSignUp] = useState(false);
+    const [showSignIn, setShowSignIn] = useState(false);
     
 
     return (
@@ -27,8 +35,9 @@ function Login() {
               {showSignUp && 
               <SignUp onClose={() => setShowSignUp(false)}/>}
             <h5 className={styles.h5} >Already have an account? </h5>
-              <button className={styles.buttonSignIn}>Sign in</button>
-              <SignIn />
+              <button className={styles.buttonSignIn} onClick={() => setShowSignIn(true)}>Sign in</button>
+              {showSignIn && 
+              <SignIn onClose={() => setShowSignIn(false)}/>}
           </div>
         </div>
       </div>

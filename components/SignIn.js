@@ -1,14 +1,16 @@
-import ReactDOM from 'react-dom';
 import styles from '../styles/SignIn.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
+import { useDispatch } from "react-redux";
 import { useState } from 'react';
 
-function SignIn () {
+function SignIn ({onClose}) {
 
+    const dispatch = useDispatch();
     //const user = useSelector((state) => state.user.value);
-
+    
+    //variable d'etat pour les 2 champs de saisies.
     const [signInUsername, setSignInUsername] = useState('');
 	const [signInPassword, setSignInPassword] = useState('');
 
@@ -22,7 +24,7 @@ function SignIn () {
         }).then(response => response.json())
             .then(data => {
                 if (data.result) {
-                    //dispatch(login({ username: signInUsername, token: data.token }));
+                    dispatch(login({ username: signInUsername, token: data.token }));
                     setSignInUsername('');
                     setSignInPassword('');
                     console.log("login ok");
@@ -32,20 +34,25 @@ function SignIn () {
     };
 
     return (
-        <div className={styles.modalContainer}>
-            <div className={styles.closeModal}>
-                <FontAwesomeIcon icon={faXmark} />  
-            </div>  
-            <div className={styles.logoContainer}>
-                <Image src="/logo.png" alt="logo" className={styles.logo} width={100} height={100} />
-                <h3 className={styles.h3}>Connect to Hackatweet</h3>
+        <div className={styles.modalOverlay}>
+            <div className={styles.modalWrapper}>
+            <div className={styles.modal}>
+                <div className={styles.modalHeader}>
+                    <FontAwesomeIcon icon={faXmark} onClick={(onClose)} />  
+                </div>
+                <div className={styles.modalBody}>
+                    <div className={styles.logoContainer}>
+                        <Image src="/logo.png" alt="logo" className={styles.logo} width={100} height={100} />
+                        <h3 className={styles.h3}>Connect to Hackatweet</h3>
+                    </div>
+                    <div className={styles.formulaire}>
+                        <input className={styles.input}  type="text" placeholder="Username" id="signInUsername" onChange={(e) => setSignInUsername(e.target.value)} value={signInUsername} />
+                        <input className={styles.input} type="password" placeholder="Password" id="signInPassword" onChange={(e) => setSignInPassword(e.target.value)} value={signInPassword} />
+                        <button className={styles.button} onClick={() => handleConnection()} >Sign in</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className={styles.formulaire}>
-                <input className={styles.input}  type="text" placeholder="Username" id="signInUsername" onChange={(e) => setSignInUsername(e.target.value)} value={signInUsername} />
-                <input className={styles.input} type="password" placeholder="Password" id="signInPassword" onChange={(e) => setSignInPassword(e.target.value)} value={signInPassword} />
-                <button className={styles.button} onClick={() => handleConnection()} >Sign in</button>
-            </div>
-
         </div>
     );
 }

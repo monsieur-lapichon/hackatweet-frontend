@@ -37,7 +37,9 @@
 .title {
     font-size: 100px;
     color: white;
-
+    line-height: 1;
+    margin-top: 0;
+    margin-bottom: 30px;
 }
 
 .signUpTitle {
@@ -51,11 +53,12 @@
 }
 
 .buttonSignUp {
-padding: 10px 80px;
-border-radius: 20px;
-font-size: 20px;
-background-color: #1099F7;
-color: white;
+    padding: 10px 80px;
+    border-radius: 20px;
+    font-size: 20px;
+    background-color: #1099F7;
+    color: white;
+    cursor: pointer;
 }
 
 .buttonSignIn {
@@ -64,5 +67,6 @@ color: white;
     font-size: 20px;
     background-color: transparent;
     color: #1099F7;
+    cursor: pointer;
 }
 
