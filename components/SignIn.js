@@ -4,6 +4,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 import { useDispatch } from "react-redux";
 import { useState } from 'react';
+import { login } from "../reducers/user";
 
 function SignIn ({onClose}) {
 
