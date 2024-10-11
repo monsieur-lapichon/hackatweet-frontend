@@ -1,18 +1,50 @@
 import styles from '../styles/Home.module.css';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../reducers/user';
+import Tweet from './Tweet';
 
 function Home() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.value);
+  //console.log(user.token);
+  if(user.token=="" || user.token==null) {
+    window.location.assign("/login");
+  }
   
   const [tweetContent, setTweetContent] = useState('');
+
+  const [tweetsData, setTweetsData] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/tweets')
+      .then(response => response.json())
+      .then(data => {
+        setTweetsData(data.tweets.filter((data, i) => i > 0));
+      });
+  }, []);
+
+  const tweets = tweetsData.map((data, i) => {
+      return <Tweet key={i} {...data} />;
+  });
   
   const handleLogout = () => {
     dispatch(logout());
     window.location.assign("/login")
+  }
+
+  const handleNewTweet = () => {
+    /*console.log("user._id",user._id)
+    fetch(`http://localhost:3000/tweets/${user._id}`, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: tweetContent }),
+    }).then(response => response.json())
+      .then(data => {
+        console.log("handleNewTweet",data)
+      });
+      */
   }
 
 
@@ -42,22 +74,14 @@ function Home() {
             onChange={(e) => setTweetContent(e.target.value)}
           />
           <div className={styles.tweetActions}>
-            <button className={styles.tweetButton}>Tweet</button>
+            <button className={styles.tweetButton} onClick={()=> handleNewTweet()}>Tweet</button>
           </div>
         </div>
 
         <div className={styles.tweetsList}>
-      
-          <div className={styles.tweet}>
-            <div className={styles.tweetUser}>
-              <p>Antoine <span>@AntoineLeProf · 5 hours</span></p>
-            </div>
-            <p>Welcome to #hackatweet guys 😎</p>
-            <div className={styles.likeTweet}>
-              <span>❤ 0</span>
-            </div>
-          </div>
+          {tweets}
         </div>
+
       </div>
 
       <div className={styles.rightContent}>

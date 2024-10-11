@@ -1,0 +1,14 @@
+.tweet {
+    background-color: #151F2B;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-top: grey 1px solid;
+}
+
+.hashtag {
+    color: #1da1f2;
+}
+.actions span {
+    margin-right: 10px;
+    cursor: pointer;
+}

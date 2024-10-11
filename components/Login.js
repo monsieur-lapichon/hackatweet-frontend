@@ -9,7 +9,9 @@ import { useSelector } from "react-redux";
 function Login() {
 
     const user = useSelector((state) => state.user.value);
-    if(user.isConnected) {
+    
+    // Si l'utilisateur est déjà connecté on le renvoie vers la page Index
+    if(user.token!="" && user.token!=null) {
       window.location.assign("/");
     }
 
