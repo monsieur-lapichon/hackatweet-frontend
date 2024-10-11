@@ -1,0 +1,36 @@
+.modalContainer {
+    display: flex;
+    flex-direction: column;
+    background: #151e27;
+    padding: 15px;
+}
+.closeModal {
+    text-align: right;
+    color: #fff;
+}
+.logoContainer {
+    text-align: center;
+}
+.h3 {
+    color: #fff;
+}
+.formulaire {
+    display: flex;
+    flex-direction: column;
+}
+.input {
+    padding: 10px;
+    border-radius: 5px;
+    background: #151e27;
+    color: #fff;
+    border: solid 1px #fff;
+    margin-bottom: 15px;
+}
+.button {
+    padding: 10px;
+    min-width: 200px;
+    border-radius: 50px;
+    font-size: 20px;
+    background-color: #fff;
+    color: #000;
+}
