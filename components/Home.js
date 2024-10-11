@@ -6,6 +6,10 @@ function Home() {
   const [tweetContent, setTweetContent] = useState('');
   
 
+  const handleLogout = () => {
+    window.location.assign("/login")
+  }
+
   return (
     <div className={styles.container}>
       
@@ -18,7 +22,7 @@ function Home() {
             <p>Firstname</p>
             <p>@username</p>
           </div>
-          <button className={styles.logoutButton}>Logout</button>
+          <button className={styles.logoutButton} onClick={()=> handleLogout()}>Logout</button>
         </div>
       </div>
 
@@ -37,7 +41,7 @@ function Home() {
         </div>
 
         <div className={styles.tweetsList}>
-        
+      
           <div className={styles.tweet}>
             <div className={styles.tweetUser}>
               <p>Antoine <span>@AntoineLeProf · 5 hours</span></p>
