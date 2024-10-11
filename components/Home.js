@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../reducers/user';
 import Tweet from './Tweet';
+import Trends from '../components/Trends';
 
 function Home() {
   const dispatch = useDispatch();
@@ -47,13 +48,16 @@ function Home() {
       */
   }
 
+  const handleHome = () => {
+    window.location.assign("/")
+  }
 
   return (
     <div className={styles.container}>
       
       <div className={styles.leftContent}>
         <div className={styles.logo}>
-          <Image src="/logo.png" alt="logo" width={50} height={50} />
+          <Image src="/logo.png" alt="logo" width={50} height={50} onClick={() => handleHome()}/>
         </div>
         <div className={styles.userSection}>
           <div className={styles.user}>
@@ -85,14 +89,8 @@ function Home() {
       </div>
 
       <div className={styles.rightContent}>
-        <h2>Trends</h2>
-        <div className={styles.trend}>
-          <p>#hackatweet</p>
-          <span>2 Tweets</span>
-        </div>
-        <div className={styles.trend}>
-          <p>#first</p>
-          <span>1 Tweet</span>
+        <div className={styles.trendsContainer}>
+          <Trends/>
         </div>
       </div>
     </div>
