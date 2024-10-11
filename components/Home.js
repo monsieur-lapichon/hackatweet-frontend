@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../reducers/user';
+import Trends from '../components/Trends';
 
 function Home() {
   const dispatch = useDispatch();
@@ -14,7 +15,6 @@ function Home() {
     dispatch(logout());
     window.location.assign("/login")
   }
-
 
   return (
     <div className={styles.container}>
@@ -61,15 +61,7 @@ function Home() {
       </div>
 
       <div className={styles.rightContent}>
-        <h2>Trends</h2>
-        <div className={styles.trend}>
-          <p>#hackatweet</p>
-          <span>2 Tweets</span>
-        </div>
-        <div className={styles.trend}>
-          <p>#first</p>
-          <span>1 Tweet</span>
-        </div>
+        <Trends/>
       </div>
     </div>
   );
