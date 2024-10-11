@@ -2,9 +2,12 @@ import styles from "../styles/SignUp.module.css";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+import { login, logout } from "../reducers/user";
 
 
 function SignUp({onClose}) {
+  const dispatch = useDispatch();
+  
   //variable d'etat pour les 3 champs de saisies.
   const [firstname, setFirstname] = useState("");
   const [username, setUsername] = useState("");
@@ -23,7 +26,7 @@ function SignUp({onClose}) {
       .then((response) => response.json())
       .then((userData) => {
         if (userData.result) {
-          console.log("User Data :", userData);
+          dispatch(login({username: username, token: userData.token, firstname: firstname}))
           setFirstname("");
           setUsername("");
           setPassword("");
@@ -39,7 +42,7 @@ function SignUp({onClose}) {
           <div className={styles.modalHeader}>
             <button
               className={styles.closeButton}
-              onClick={(onClose)}
+              onClick={() => onClose()}
             >
               X
             </button>
