@@ -24,13 +24,6 @@
   border-right: 1px grey solid;
 }
 
-.rightContent {
-  width: 20%;
-  background-color: #151F2B;
-  color: white;
-  padding: 20px;
-}
-
 .userSection {
   display: flex;
   flex-direction: column;
@@ -92,6 +85,33 @@
   border-radius: 8px;
 }
 
-.hashtag {
-  color: #1da1f2;
+.rightContent {
+  display: ;
+  width: 20%;
+  background-color: #151F2B;
+  color: white;
+  padding: 20px;
+}
+
+.trendsContainer {
+  display: flex;
+  background-color: #1D2733;
+  border-radius: 30px;
+  padding: 15px;
+  
+}
+
+.rightContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+}
+
+.pointerTrends {
+  cursor: pointer;
+}
+
+.logo {
+  cursor: pointer;
 }

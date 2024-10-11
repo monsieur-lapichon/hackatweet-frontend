@@ -16,12 +16,16 @@ function Home() {
     window.location.assign("/login")
   }
 
+  const handleHome = () => {
+    window.location.assign("/")
+  }
+
   return (
     <div className={styles.container}>
       
       <div className={styles.leftContent}>
         <div className={styles.logo}>
-          <Image src="/logo.png" alt="logo" width={50} height={50} />
+          <Image src="/logo.png" alt="logo" width={50} height={50} onClick={() => handleHome()}/>
         </div>
         <div className={styles.userSection}>
           <div className={styles.user}>
@@ -61,7 +65,9 @@ function Home() {
       </div>
 
       <div className={styles.rightContent}>
-        <Trends/>
+        <div className={styles.trendsContainer}>
+          <Trends/>
+        </div>
       </div>
     </div>
   );

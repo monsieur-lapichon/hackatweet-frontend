@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import styles from '../styles/Home.module.css';
 
 function Trends () {
 
@@ -29,11 +30,15 @@ function Trends () {
         return {name: trend.name, tweetCount: tweetCount}
     });
 
+    const handleHashtagClick = () => {
+        window.location.assign('/hashtag')
+    }
+
     return (
-        <div>
-            <h2>Trends</h2>
+        <div className={styles.trendsContent}>
+            <h2 className={styles.trendsTitle}>Trends</h2>
             {tweetsByTrends.map((trend, index) =>
-                <div key={index}>
+                <div className={styles.pointerTrends} key={index} onClick={() => handleHashtagClick()}>
                     <p>{trend.name}</p>
                     <span>{trend.tweetCount}</span>
                 </div>
